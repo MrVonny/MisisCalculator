@@ -52,7 +52,7 @@
 
 	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview4" />
-	  <PackageReference Include="NCalcSync" Version="3.4.0" />
+
 	</ItemGroup>
 
 	<ItemGroup>
@@ -63,6 +63,10 @@
 
 	<ItemGroup>
 	  <Folder Include="Resources\Styles\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Shared\Shared.csproj" />
 	</ItemGroup>
 
 </Project>

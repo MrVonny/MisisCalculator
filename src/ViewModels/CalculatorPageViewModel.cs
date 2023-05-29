@@ -1,4 +1,8 @@
-﻿namespace MauiScientificCalculator.ViewModels;
+﻿using System.Net.Http;
+using System.Net.Http.Json;
+using CalcaulatorBackend.Models;
+
+namespace MauiScientificCalculator.ViewModels;
 
 [INotifyPropertyChanged]
 internal partial class CalculatorPageViewModel
@@ -37,11 +41,19 @@ internal partial class CalculatorPageViewModel
 
         try
         {
-            var inputString = NormalizeInputString();
-            var expression = new Expression(inputString);
-            var result = expression.Evaluate();
+            var httpClient = new HttpClient()
+            {
+                BaseAddress = new Uri("http://77.223.107.117/")
+            };
 
-            CalculatedResult = result.ToString();
+            var response = httpClient.PostAsJsonAsync("/Calculator", new ExpressionRequestDto()
+            {
+                Expression = InputText
+            }).Result;
+
+            var result = response.Content.ReadFromJsonAsync<ExpressionResponseDto>().Result;
+
+            CalculatedResult = result.Success ? result.Result.ToString() : "Error";
         }
         catch (Exception ex)
         {
@@ -49,35 +61,6 @@ internal partial class CalculatorPageViewModel
         }
     }
 
-    private string NormalizeInputString()
-    {
-        Dictionary<string, string> _opMapper = new()
-        {
-            {"×", "*"},
-            {"÷", "/"},
-            {"SIN", "Sin"},
-            {"COS", "Cos"},
-            {"TAN", "Tan"},
-            {"ASIN", "Asin"},
-            {"ACOS", "Acos"},
-            {"ATAN", "Atan"},
-            {"LOG", "Log"},
-            {"EXP", "Exp"},
-            {"LOG10", "Log10"},
-            {"POW", "Pow"},
-            {"SQRT", "Sqrt"},
-            {"ABS", "Abs"},
-        };
-
-        var retString = InputText;
-
-        foreach (var key in _opMapper.Keys)
-        {
-            retString = retString.Replace(key, _opMapper[key]);
-        }
-
-        return retString;
-    }
 
     [RelayCommand]
     private void Backspace()

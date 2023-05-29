@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiScientificCalculator", "MauiScientificCalculator.csproj", "{0928233A-881C-4EBF-948D-849CB5162852}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiScientificCalculator", "src\MauiScientificCalculator.csproj", "{0928233A-881C-4EBF-948D-849CB5162852}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcaulatorBackend", "CalcaulatorBackend\CalcaulatorBackend.csproj", "{181C8B3D-7120-4166-8AEF-EB2B24A5BDCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{75F74898-7125-4EDD-AEC0-04DCDC259C99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +21,14 @@ Global
 		{0928233A-881C-4EBF-948D-849CB5162852}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0928233A-881C-4EBF-948D-849CB5162852}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0928233A-881C-4EBF-948D-849CB5162852}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{181C8B3D-7120-4166-8AEF-EB2B24A5BDCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{181C8B3D-7120-4166-8AEF-EB2B24A5BDCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{181C8B3D-7120-4166-8AEF-EB2B24A5BDCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{181C8B3D-7120-4166-8AEF-EB2B24A5BDCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75F74898-7125-4EDD-AEC0-04DCDC259C99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75F74898-7125-4EDD-AEC0-04DCDC259C99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75F74898-7125-4EDD-AEC0-04DCDC259C99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75F74898-7125-4EDD-AEC0-04DCDC259C99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

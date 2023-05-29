@@ -16,5 +16,3 @@ global using CommunityToolkit.Mvvm.Input;
 global using MauiScientificCalculator.Views;
 global using MauiScientificCalculator.ViewModels;
 
-//Others
-global using NCalc;

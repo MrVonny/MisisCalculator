@@ -45,7 +45,7 @@
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="{Binding InputText}" Style="{StaticResource InputBoxLabelStyle}" />
-                        <Span Text="│" FontSize="28" TextColor="{StaticResource PrimaryColor}" Style="{StaticResource InputBoxLabelStyle}" />
+                        <Span Text="│" FontSize="22" TextColor="{StaticResource PrimaryColor}" Style="{StaticResource InputBoxLabelStyle}" />
                         <Span Text=" " Style="{StaticResource InputBoxLabelStyle}" />
                     </FormattedString>
                 </Label.FormattedText>

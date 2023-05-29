@@ -101,11 +101,12 @@
             </Style>
 
             <Style TargetType="Label" x:Key="InputBoxLabelStyle">
-                <Setter Property="FontSize" Value="32" />
+                <Setter Property="FontSize" Value="22" />
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="FontFamily" Value="LightFont" />
                 <Setter Property="LineBreakMode" Value="WordWrap" />
                 <Setter Property="FontAutoScalingEnabled" Value="False" />
+                <Setter Property="LineHeight" Value="0"></Setter>
             </Style>
 
         </ResourceDictionary>
