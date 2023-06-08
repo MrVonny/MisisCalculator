@@ -1,12 +1,15 @@
 ﻿using System.Net.Http;
 using System.Net.Http.Json;
 using CalcaulatorBackend.Models;
+using Shared.Models;
 
 namespace MauiScientificCalculator.ViewModels;
 
 [INotifyPropertyChanged]
-internal partial class CalculatorPageViewModel
+public partial class CalculatorPageViewModel
 {
+    private readonly BackendService _backendService;
+
     [ObservableProperty]
     private string inputText = "";
 
@@ -15,8 +18,9 @@ internal partial class CalculatorPageViewModel
 
     private bool isSciOpWaiting = false;
 
-    public CalculatorPageViewModel()
+    public CalculatorPageViewModel(BackendService backendService)
     {
+        _backendService = backendService;
     }
 
     [RelayCommand]
@@ -41,21 +45,10 @@ internal partial class CalculatorPageViewModel
 
         try
         {
-            var httpClient = new HttpClient()
-            {
-                BaseAddress = new Uri("http://77.223.107.117/")
-            };
-
-            var response = httpClient.PostAsJsonAsync("/Calculator", new ExpressionRequestDto()
-            {
-                Expression = InputText
-            }).Result;
-
-            var result = response.Content.ReadFromJsonAsync<ExpressionResponseDto>().Result;
-
+            var result = _backendService.Calculate(InputText);
             CalculatedResult = result.Success ? result.Result.ToString() : "Error";
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             CalculatedResult = "NaN";
         }

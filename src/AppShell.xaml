@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="MauiScientificCalculator.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:app="clr-namespace:MauiScientificCalculator"
+    xmlns:views="clr-namespace:MauiScientificCalculator.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <ShellContent
+            Title="Калькулятор"
+            Route="Calculator"
+            ContentTemplate="{DataTemplate views:CalculatorPage}" />
+        <ShellContent
+            Title="История"
+            Route="History"
+            ContentTemplate="{DataTemplate views:HistoryPage}" />
+    </TabBar>
+
+</Shell>

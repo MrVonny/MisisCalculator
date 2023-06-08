@@ -1,6 +1,9 @@
-﻿using CalcaulatorBackend.Models;
+﻿using CalcaulatorBackend.Infrastrucure;
+using CalcaulatorBackend.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using NCalc;
+using Shared.Models;
 
 namespace CalcaulatorBackend.Controllers
 {
@@ -8,12 +11,13 @@ namespace CalcaulatorBackend.Controllers
     [Route("[controller]")]
     public class CalculatorController : ControllerBase
     {
-        
+        private readonly AppDbContext _appDbContext;
         private readonly ILogger<CalculatorController> _logger;
 
-        public CalculatorController(ILogger<CalculatorController> logger)
+        public CalculatorController(ILogger<CalculatorController> logger, AppDbContext appDbContext)
         {
             _logger = logger;
+            _appDbContext = appDbContext;
         }
 
 
@@ -26,6 +30,14 @@ namespace CalcaulatorBackend.Controllers
                 var expression = new Expression(inputString);
                 var result = expression.Evaluate();
 
+                _appDbContext.Histories.Add(new History()
+                {
+                    DeviceName = request.DeviceName,
+                    Expressions = request.Expression,
+                    CreatedAt = DateTime.UtcNow
+                });
+
+                await _appDbContext.SaveChangesAsync();
 
                 return Ok(new ExpressionResponseDto()
                 {
@@ -41,7 +53,23 @@ namespace CalcaulatorBackend.Controllers
                     Success = false
                 });
             }
+
+        }
+
+
+        [HttpPost("history")]
+        public async Task<IActionResult> History([FromBody] HistoryRequestDto request)
+        {
+            _logger.LogInformation("Device Name: {deviceName}", request.DeviceName);
             
+            var history = await _appDbContext.Histories
+                .Where(x => x.DeviceName == request.DeviceName).ToListAsync();
+            
+            return Ok(new HistoryResponseDto()
+            {
+                History = history
+            });
+
         }
 
         private string NormalizeInputString(string expr)

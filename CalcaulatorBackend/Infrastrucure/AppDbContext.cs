@@ -1,19 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Shared.Models;
 
 namespace CalcaulatorBackend.Infrastrucure;
 
 public class AppDbContext : DbContext
 {
-	protected override void OnModelCreating(ModelBuilder modelBuilder)
+	public AppDbContext(DbContextOptions<AppDbContext> options)
+		: base(options)
 	{
-		base.OnModelCreating(modelBuilder);
 		Database.EnsureCreated();
 	}
 
 	public DbSet<History> Histories { get; set; }
-}
-
-public class History
-{
-	public List<string> Expressions { get; set; }
 }

@@ -1,4 +1,7 @@
-﻿namespace MauiScientificCalculator;
+﻿using System.Net.Http;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace MauiScientificCalculator;
 
 
 public static class MauiProgram
@@ -14,6 +17,21 @@ public static class MauiProgram
                 fonts.AddFont("Cairo-ExtraLight.ttf", "LightFont");
             });
 
-		return builder.Build();
+
+        builder.Services.AddSingleton(sp => new HttpClient()
+        {
+            BaseAddress = new Uri("http://77.223.107.117/")
+        });
+
+        builder.Services.AddTransient<BackendService>();
+
+        builder.Services.AddSingleton<App>();
+        builder.Services.AddSingleton<AppShell>();
+        builder.Services.AddTransient<CalculatorPage>();
+        builder.Services.AddTransient<CalculatorPageViewModel>();
+        builder.Services.AddTransient<HistoryPage>();
+        builder.Services.AddTransient<HistoryPageViewModel>();
+
+        return builder.Build();
 	}
 }

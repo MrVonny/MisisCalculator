@@ -2,11 +2,11 @@ namespace MauiScientificCalculator.Views;
 
 public partial class CalculatorPage : ContentPage
 {
-	public CalculatorPage()
+	public CalculatorPage(CalculatorPageViewModel calculatorPageViewModel)
 	{
 		InitializeComponent();
 
         //Initialize the view model
-        this.BindingContext = new CalculatorPageViewModel();
+        this.BindingContext = calculatorPageViewModel;
     }
 }

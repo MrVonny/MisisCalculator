@@ -6,7 +6,7 @@
     Title="Scientific Calculator">
 
     <Grid
-        RowDefinitions="*,68,48,44,44,48,64,64,64,64"
+        RowDefinitions="*,68,48,44,44,64,64,64,64"
         ColumnDefinitions="*,*,*,*,*">
 
         <!-- Color Answer Row -->
@@ -80,51 +80,10 @@
 
         <!-- Scientific Operators -->
 
+
         <!-- Row 1 -->
         <Button
             Grid.Row="2"
-            Grid.Column="0"
-            ZIndex="1"
-            Margin="6,10,6,4"
-            Style="{StaticResource ScientificOperatorButtonStyle}"
-            Text="MEAN" />
-
-        <Button
-            Grid.Row="2"
-            Grid.Column="1"
-            ZIndex="1"
-            Margin="6,10,6,4"
-            Style="{StaticResource ScientificOperatorButtonStyle}"
-            Text="MOD" />
-
-        <Button
-            Grid.Row="2"
-            Grid.Column="2"
-            ZIndex="1"
-            Margin="6,10,6,4"
-            Style="{StaticResource ScientificOperatorButtonStyle}"
-            Text="STD" />
-
-        <Button
-            Grid.Row="2"
-            Grid.Column="3"
-            ZIndex="1"
-            Margin="6,10,6,4"
-            Style="{StaticResource ScientificOperatorButtonStyle}"
-            Text="VAR" />
-
-        <Button
-            Grid.Row="2"
-            Grid.Column="4"
-            ZIndex="1"
-            Margin="6,10,6,4"
-            Style="{StaticResource ScientificOperatorButtonStyle}"
-            Text="FACT" />
-
-
-        <!-- Row 2 -->
-        <Button
-            Grid.Row="3"
             Grid.Column="0"
             ZIndex="1"            
             Style="{StaticResource ScientificOperatorButtonStyle}"
@@ -133,7 +92,7 @@
             CommandParameter="SIN" />
 
         <Button
-            Grid.Row="3"
+            Grid.Row="2"
             Grid.Column="1"
             ZIndex="1"
             Style="{StaticResource ScientificOperatorButtonStyle}"
@@ -142,7 +101,7 @@
             CommandParameter="COS" />
 
         <Button
-            Grid.Row="3"
+            Grid.Row="2"
             Grid.Column="2"
             ZIndex="1"
             Style="{StaticResource ScientificOperatorButtonStyle}"
@@ -151,7 +110,7 @@
             CommandParameter="TAN" />
 
         <Button
-            Grid.Row="3"
+            Grid.Row="2"
             Grid.Column="3"
             ZIndex="1"
             Style="{StaticResource ScientificOperatorButtonStyle}"
@@ -160,7 +119,7 @@
             CommandParameter="LOG" />
 
         <Button
-            Grid.Row="3"
+            Grid.Row="2"
             Grid.Column="4"
             ZIndex="1"
             Style="{StaticResource ScientificOperatorButtonStyle}"
@@ -168,9 +127,9 @@
             Command="{Binding ScientificOperatorCommand}"
             CommandParameter="EXP" />
 
-        <!-- Row 3 -->
+        <!-- Row 2 -->
         <Button
-            Grid.Row="4"
+            Grid.Row="3"
             Grid.Column="0"
             ZIndex="1"
             Style="{StaticResource ScientificOperatorButtonStyle}"
@@ -179,7 +138,7 @@
             CommandParameter="ASIN" />
 
         <Button
-            Grid.Row="4"
+            Grid.Row="3"
             Grid.Column="1"
             ZIndex="1"
             Style="{StaticResource ScientificOperatorButtonStyle}"
@@ -188,7 +147,7 @@
             CommandParameter="ACOS" />
 
         <Button
-            Grid.Row="4"
+            Grid.Row="3"
             Grid.Column="2"
             ZIndex="1"
             Style="{StaticResource ScientificOperatorButtonStyle}"
@@ -197,7 +156,7 @@
             CommandParameter="ATAN" />
 
         <Button
-            Grid.Row="4"
+            Grid.Row="3"
             Grid.Column="3"
             ZIndex="1"
             Style="{StaticResource ScientificOperatorButtonStyle}"
@@ -206,7 +165,7 @@
             CommandParameter="LOG10" />
 
         <Button
-            Grid.Row="4"
+            Grid.Row="3"
             Grid.Column="4"
             ZIndex="1"
             Style="{StaticResource ScientificOperatorButtonStyle}"
@@ -214,9 +173,9 @@
             Command="{Binding ScientificOperatorCommand}"
             CommandParameter="POW" />
 
-        <!-- Row 4 -->
+        <!-- Row 3 -->
         <Button
-            Grid.Row="5"
+            Grid.Row="4"
             Grid.Column="0"
             ZIndex="1"
             Margin="6,4,6,10"
@@ -226,7 +185,7 @@
             CommandParameter="SQRT" />
 
         <Button
-            Grid.Row="5"
+            Grid.Row="4"
             Grid.Column="1"
             ZIndex="1"
             Margin="6,4,6,10"
@@ -236,7 +195,7 @@
             CommandParameter="ABS" />
 
         <Button
-            Grid.Row="5"
+            Grid.Row="4"
             Grid.Column="2"
             ZIndex="1"
             Margin="6,4,6,10"
@@ -246,7 +205,7 @@
             CommandParameter="," />
 
         <Button
-            Grid.Row="5"
+            Grid.Row="4"
             Grid.Column="3"
             ZIndex="1"
             Margin="6,4,6,10"
@@ -256,7 +215,7 @@
             CommandParameter="(" />
 
         <Button
-            Grid.Row="5"
+            Grid.Row="4"
             Grid.Column="4"
             ZIndex="1"
             Margin="6,4,6,10"
@@ -269,7 +228,7 @@
 
         <!-- Mathematical Operators -->
         <Button
-            Grid.Row="6"
+            Grid.Row="5"
             Grid.Column="3"
             Grid.ColumnSpan="2"
             Style="{StaticResource OperatorButtonStyle}"
@@ -277,7 +236,7 @@
             Command="{Binding ResetCommand}" />
 
         <Button
-            Grid.Row="7"
+            Grid.Row="6"
             Grid.Column="3"
             Style="{StaticResource OperatorButtonStyle}"
             Text="×"
@@ -285,7 +244,7 @@
             CommandParameter="×"/>
 
         <Button
-            Grid.Row="7"
+            Grid.Row="6"
             Grid.Column="4"
             Style="{StaticResource OperatorButtonStyle}"
             Text="÷"
@@ -293,7 +252,7 @@
             CommandParameter="÷"/>
 
         <Button
-            Grid.Row="8"
+            Grid.Row="7"
             Grid.Column="3"
             Style="{StaticResource OperatorButtonStyle}"
             Text="+"
@@ -301,7 +260,7 @@
             CommandParameter="+"/>
 
         <Button
-            Grid.Row="8"
+            Grid.Row="7"
             Grid.Column="4"
             Style="{StaticResource OperatorButtonStyle}"
             Text="-"
@@ -309,7 +268,7 @@
             CommandParameter="-"/>
 
         <Button
-            Grid.Row="9"
+            Grid.Row="8"
             Grid.Column="3"
             Grid.ColumnSpan="2"
             Style="{StaticResource OperatorButtonStyle}"
@@ -320,7 +279,7 @@
 
         <!-- Numbers Input -->
         <Button
-            Grid.Row="6"
+            Grid.Row="5"
             Grid.Column="0"
             Style="{StaticResource NumberButtonStyle}"
             Text="7"
@@ -328,7 +287,7 @@
             CommandParameter="7" />
 
         <Button
-            Grid.Row="6"
+            Grid.Row="5"
             Grid.Column="1"
             Style="{StaticResource NumberButtonStyle}"
             Text="8"
@@ -336,7 +295,7 @@
             CommandParameter="8" />
 
         <Button
-            Grid.Row="6"
+            Grid.Row="5"
             Grid.Column="2"
             Style="{StaticResource NumberButtonStyle}"
             Text="9"
@@ -344,7 +303,7 @@
             CommandParameter="9" />
 
         <Button
-            Grid.Row="7"
+            Grid.Row="6"
             Grid.Column="0"
             Style="{StaticResource NumberButtonStyle}"
             Text="4"
@@ -352,7 +311,7 @@
             CommandParameter="4" />
 
         <Button
-            Grid.Row="7"
+            Grid.Row="6"
             Grid.Column="1"
             Style="{StaticResource NumberButtonStyle}"
             Text="5"
@@ -360,7 +319,7 @@
             CommandParameter="5" />
 
         <Button
-            Grid.Row="7"
+            Grid.Row="6"
             Grid.Column="2"
             Style="{StaticResource NumberButtonStyle}"
             Text="6"
@@ -368,7 +327,7 @@
             CommandParameter="6" />
 
         <Button
-            Grid.Row="8"
+            Grid.Row="7"
             Grid.Column="0"
             Style="{StaticResource NumberButtonStyle}"
             Text="1"
@@ -376,7 +335,7 @@
             CommandParameter="1" />
 
         <Button
-            Grid.Row="8"
+            Grid.Row="7"
             Grid.Column="1"
             Style="{StaticResource NumberButtonStyle}"
             Text="2"
@@ -384,7 +343,7 @@
             CommandParameter="2" />
 
         <Button
-            Grid.Row="8"
+            Grid.Row="7"
             Grid.Column="2"
             Style="{StaticResource NumberButtonStyle}"
             Text="3"
@@ -392,7 +351,7 @@
             CommandParameter="3" />
 
         <Button
-            Grid.Row="9"
+            Grid.Row="8"
             Grid.Column="0"
             Style="{StaticResource NumberButtonStyle}"
             Text="0"
@@ -400,7 +359,7 @@
             CommandParameter="0" />
 
         <Button
-            Grid.Row="9"
+            Grid.Row="8"
             Grid.Column="1"
             Style="{StaticResource NumberButtonStyle}"
             Text="."
@@ -408,13 +367,22 @@
             CommandParameter="." />
 
         <Button
-            Grid.Row="9"
+            Grid.Row="8"
             Grid.Column="2"
             Style="{StaticResource NumberButtonStyle}"
             Text="⌫"
             Command="{Binding BackspaceCommand}" />
 
         <!-- Horizontal Border Lines -->
+        <BoxView
+            Grid.Row="5"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            HorizontalOptions="Fill"            
+            VerticalOptions="End"
+            HeightRequest="1"
+            BackgroundColor="{StaticResource BorderColor}"/>
+
         <BoxView
             Grid.Row="6"
             Grid.Column="0"
@@ -426,15 +394,6 @@
 
         <BoxView
             Grid.Row="7"
-            Grid.Column="0"
-            Grid.ColumnSpan="3"
-            HorizontalOptions="Fill"            
-            VerticalOptions="End"
-            HeightRequest="1"
-            BackgroundColor="{StaticResource BorderColor}"/>
-
-        <BoxView
-            Grid.Row="8"
             Grid.Column="0"
             Grid.ColumnSpan="3"
             HorizontalOptions="Fill"            
@@ -444,7 +403,7 @@
 
         <!-- Vertical Border Lines -->
         <BoxView
-            Grid.Row="6"
+            Grid.Row="5"
             Grid.RowSpan="4"
             Grid.Column="0"
             HorizontalOptions="End"            
@@ -453,7 +412,7 @@
             BackgroundColor="{StaticResource BorderColor}"/>
 
         <BoxView
-            Grid.Row="6"
+            Grid.Row="5"
             Grid.RowSpan="4"
             Grid.Column="1"
             HorizontalOptions="End"            

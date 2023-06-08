@@ -28,6 +28,13 @@
                 <Setter Property="BackgroundColor" Value="Transparent" />
             </Style>
 
+            <!-- Button Styles -->
+            <Style TargetType="TabBar">
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#16191E"></Setter>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"></Setter>
+                <Setter Property="Shell.UnselectedColor" Value="Gray"></Setter>
+            </Style>
+
 
             <!-- Button Styles -->
             <Style TargetType="Button" x:Key="NumberButtonStyle">

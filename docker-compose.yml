@@ -10,13 +10,13 @@ services:
     depends_on:
       - "customer_db"
     container_name: customer-service
-    ports:s
+    ports:
       - "80:80"
     build:
       context: .
       dockerfile: services/ServiceOne/ServiceOne.API/Dockerfile
     environment:
-      - ConnectionString=host=worklog_management_db;port=5435;database=calculator;username=postgres;password=MrBen228;Pooling=true;
+      - ConnectionStrings_Postgres=host=worklog_management_db;port=5435;database=calculator;username=postgres;password=MrBen228;Pooling=true;
     networks:
       - dev
 
