@@ -27,10 +27,10 @@ public static class MauiProgram
 
         builder.Services.AddSingleton<App>();
         builder.Services.AddSingleton<AppShell>();
-        builder.Services.AddTransient<CalculatorPage>();
-        builder.Services.AddTransient<CalculatorPageViewModel>();
-        builder.Services.AddTransient<HistoryPage>();
-        builder.Services.AddTransient<HistoryPageViewModel>();
+        builder.Services.AddSingleton<CalculatorPage>();
+        builder.Services.AddSingleton<CalculatorPageViewModel>();
+        builder.Services.AddSingleton<HistoryPage>();
+        builder.Services.AddSingleton<HistoryPageViewModel>();
 
         return builder.Build();
 	}

@@ -1,5 +1,4 @@
-﻿using Microsoft.Maui.Controls;
-using Shared.Models;
+﻿using Shared.Models;
 
 
 namespace MauiScientificCalculator.ViewModels;
@@ -7,12 +6,21 @@ namespace MauiScientificCalculator.ViewModels;
 [INotifyPropertyChanged]
 public partial class HistoryPageViewModel
 {
-    public List<History> History { get; set; }
+    private readonly BackendService _backendService;
+
+    [ObservableProperty] 
+    private List<History> history;
 
 
     public HistoryPageViewModel(BackendService backendService)
     {
-        History = backendService.GetHistory().History;
+        _backendService = backendService;
+        Refresh();
+    }
 
+    [RelayCommand]
+    private void Refresh()
+    {
+        History = _backendService.GetHistory().History;
     }
 }

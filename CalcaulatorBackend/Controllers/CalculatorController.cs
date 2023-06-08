@@ -74,6 +74,7 @@ namespace CalcaulatorBackend.Controllers
 
         private string NormalizeInputString(string expr)
         {
+            expr = expr.ToUpper();
             Dictionary<string, string> _opMapper = new()
             {
                 {"×", "*"},
