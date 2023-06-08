@@ -27,6 +27,7 @@ namespace CalcaulatorBackend.Controllers
             try
             {
                 var inputString = NormalizeInputString(request.Expression);
+                _logger.LogInformation("Normalized: {expr}",  inputString);
                 var expression = new Expression(inputString);
                 var result = expression.Evaluate();
 
