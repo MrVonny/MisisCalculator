@@ -64,12 +64,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Resources\AppIcon\" />
-	  <Folder Include="Resources\Images\" />
-	  <Folder Include="Resources\Raw\" />
-	  <Folder Include="Resources\Splash\" />
 	  <Folder Include="Resources\Styles\" />
-	  <Folder Include="Новая папка\Новая папка\" />
 	</ItemGroup>
 
 	<ItemGroup>

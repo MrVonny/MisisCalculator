@@ -6,7 +6,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <!-- Colors -->
-            <Color x:Key="PrimaryColor">#EFBB31</Color>
+            <Color x:Key="PrimaryColor">White</Color>
             <Color x:Key="SecondaryColor">White</Color>
             <Color x:Key="PageBackgroundColor">#16191E</Color>
             <Color x:Key="BorderColor">#33777777</Color>
@@ -56,7 +56,7 @@
                 <Setter Property="FontSize" Value="22" />
                 <Setter Property="FontFamily" Value="RegularFont" />
                 <Setter Property="TextColor" Value="Black" />
-                <Setter Property="BackgroundColor" Value="#EFBB31" />
+                <Setter Property="BackgroundColor" Value="White" />
                 <Setter Property="BorderWidth" Value="0" />
                 <Setter Property="BorderColor" Value="{StaticResource BorderColor}" />
                 <Setter Property="VerticalOptions" Value="Fill" />
@@ -93,7 +93,7 @@
             <!-- Label Styles -->
             <Style TargetType="Label" x:Key="EqualsLabelStyle">
                 <Setter Property="FontSize" Value="28" />
-                <Setter Property="TextColor" Value="#EFBB31" />
+                <Setter Property="TextColor" Value="White" />
                 <Setter Property="FontFamily" Value="LightFont" />
                 <Setter Property="LineBreakMode" Value="TailTruncation" />
                 <Setter Property="FontAutoScalingEnabled" Value="False" />

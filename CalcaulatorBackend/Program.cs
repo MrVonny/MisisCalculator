@@ -14,16 +14,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options =>
 	options.UseNpgsql(builder.Configuration.GetConnectionString("Postgres")));
 
-builder.Services.AddHttpLogging(logging =>
-{
-	logging.LoggingFields = HttpLoggingFields.All;
-	logging.RequestBodyLogLimit = 4096;
-	logging.ResponseBodyLogLimit = 4096;
-});
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+
 
 app.UseSwagger();  
 app.UseSwaggerUI();
